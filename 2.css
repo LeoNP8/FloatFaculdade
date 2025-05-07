@@ -1,0 +1,61 @@
+body {
+    font-family: sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    background-color: #f4f4f4;
+
+    overflow: auto; /* Garante que o body se expanda para conter os floats */
+}
+
+
+
+.container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 20px auto;
+
+    background-color:#fff;
+
+    padding: 15px;
+
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+
+
+.coluna {
+    float: left;
+
+    width: 33.33%; /* Três colunas de largura igual */
+
+    padding: 15px;
+
+    box-sizing: border-box;
+}/* Limpa os floats para que o container envolva as colunas */
+
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.header, .footer{
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}/*Para telas menores, as colunas ocuparão toda a largura */
+
+@media (max-width: 768px){
+    .coluna{
+        width: 100%;
+        float: none;
+    }
+}
